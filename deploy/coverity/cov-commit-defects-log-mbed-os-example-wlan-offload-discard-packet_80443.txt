@@ -1,0 +1,39 @@
+THIS_COVERITY_PROJECT=WPP_CODE_EXAMPLES [Use Existing]
++ cov-manage-im --host iot-coverity-stage.aus.cypress.com --port 8080 --auth-key-file /var/tmp/gitlab-runner1/builds/4995f45a/0/wpp/ce/mbed/mbed-os-example-wlan-offload-discard-packet/asset-template/coverity/coverity-authkey --mode streams --add --set lang:cpp --set name:mbed-os-example-wlan-offload-discard-packet_80443
+Addition succeeded for 1 stream.
++ cov-manage-im --host iot-coverity-stage.aus.cypress.com --port 8080 --auth-key-file /var/tmp/gitlab-runner1/builds/4995f45a/0/wpp/ce/mbed/mbed-os-example-wlan-offload-discard-packet/asset-template/coverity/coverity-authkey --mode projects --name WPP_CODE_EXAMPLES --update --insert stream:mbed-os-example-wlan-offload-discard-packet_80443
+Update succeeded for 1 project.
++ cov-commit-defects --verbose 0 --dir cov-analyze-data --host iot-coverity-stage.aus.cypress.com --port 8080 --auth-key-file /var/tmp/gitlab-runner1/builds/4995f45a/0/wpp/ce/mbed/mbed-os-example-wlan-offload-discard-packet/asset-template/coverity/coverity-authkey --stream mbed-os-example-wlan-offload-discard-packet_80443
+Coverity Defect Commit Client version 2018.12 on Linux 4.4.0-116-generic x86_64
+Internal version numbers: c56d2f65de p-pacific-push-35824
+
+Connecting to server iot-coverity-stage.aus.cypress.com:9090
+Upgrading encryption to "required" because we have a certificate 
+from a past session for this server.
+Connection is encrypted.
+[STATUS] 2019-12-06 17:55:07 UTC - Committing 26 defect files...
+|0----------25-----------50----------75---------100|
+****************************************************
+[STATUS] 2019-12-06 17:55:07 UTC - Committing 2721 file descriptions...
+|0----------25-----------50----------75---------100|
+****************************************************
+[STATUS] 2019-12-06 17:55:33 UTC - Committing 2713 cross-reference bundles...
+|0----------25-----------50----------75---------100|
+****************************************************
+[STATUS] 2019-12-06 17:55:43 UTC - Committing 23427 functions...
+|0----------25-----------50----------75---------100|
+****************************************************
+[STATUS] 2019-12-06 17:56:12 UTC - Committing 26 defect files...
+|0----------25-----------50----------75---------100|
+****************************************************
+[STATUS] 2019-12-06 17:56:15 UTC - Committing 3 output files...
+|0----------25-----------50----------75---------100|
+****************************************************
+[STATUS] 2019-12-06 17:56:15 UTC - Sending hashes for 4732 summaries...
+|0----------25-----------50----------75---------100|
+****************************************************
+New snapshot ID 51344 added.
+Updates to Coverity Analysis are available.  The installation of the updates is optional.  These updates will be integrated in the next major release.
+Please run "cov-install-updates list <connection options>" for a list of available updates and a brief description of the content of each update.
+Please run "cov-install-updates install <connection options>" to apply the updates to Coverity Analysis.
+Elapsed time: 00:01:14
