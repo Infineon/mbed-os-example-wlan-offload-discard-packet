@@ -1,14 +1,16 @@
 /*******************************************************************************
-* File Name: cycfg_routing.c
+* File Name: cycfg_connectivity_wifi.c
 *
 * Description:
-* Establishes all necessary connections between hardware elements.
+* Connectivity Wi-Fi configuration
 * This file was automatically generated and should not be modified.
-* Device Configurator: 2.0.0.1483
-* Device Support Library (../../../psoc6pdl): 1.3.1.1499
+* Tools Package 2.1.0.1266
+* psoc6pdl 1.6.1.4886
+* personalities_2.0 2.0.0.0
+* udd 1.2.0.473
 *
 ********************************************************************************
-* Copyright 2017-2019 Cypress Semiconductor Corporation
+* Copyright 2020 Cypress Semiconductor Corporation
 * SPDX-License-Identifier: Apache-2.0
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,8 +26,32 @@
 * limitations under the License.
 ********************************************************************************/
 
-#include "cycfg_routing.h"
+#include "cycfg_connectivity_wifi.h"
 
-void init_cycfg_routing(void)
+#define CYCFG_PF_OL_ENABLED (1u)
+
+static pf_ol_t pf_ol_0;
+static const cy_pf_ol_cfg_t cy_pf_ol_cfg_0[] = 
 {
+	[0u] = {.feature = CY_PF_OL_FEAT_IPTYPE,
+			.bits = CY_PF_ACTIVE_SLEEP | CY_PF_ACTIVE_WAKE | CY_PF_ACTION_DISCARD,
+			.id = 0u,
+			.u = {
+				.ip = {
+						.ip_type = 1u,
+						},
+				},
+			},
+	[1u] = {.feature = CY_PF_OL_FEAT_LAST},
+};
+static const ol_desc_t ol_list_0[] = 
+{
+	[0u] = {"Pkt_Filter", &cy_pf_ol_cfg_0, &pf_ol_fns, &pf_ol_0},
+	[2u] = {NULL, NULL, NULL, NULL},
+};
+
+const ol_desc_t *cycfg_get_default_ol_list(void)
+{
+	return &ol_list_0[0];
 }
+
